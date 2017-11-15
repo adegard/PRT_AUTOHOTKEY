@@ -9,7 +9,7 @@ Installation
 AutohotKey: https://autohotkey.com/
 Capture2text: http://capture2text.sourceforge.net/ (disabling pop up)
 
-Test with Prorealtime v10.3
+Use Prorealtime v10.3 with REPORT windows in  FULL SCREEN mode
 
 Download and Install files in the same directory
 
