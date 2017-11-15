@@ -13,4 +13,6 @@ Test with Prorealtime v10.3
 
 Download and Install files in the same directory
 
-It could be necessary to adjust X, Y coordinate of mouse click!!
+NOTE: It could be necessary to adjust X, Y coordinate of mouse click!!
+
+Run PRT_strategy_tester VPS v1.7.ahk
