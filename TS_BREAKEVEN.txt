@@ -1,0 +1,23 @@
+
+
+startBreakeven = 30 //how much pips/points in gain to activate the breakeven function?
+PointsToKeep = 5 //how much pips/points to keep in profit above of below our entry price when the breakeven is activated (beware of spread)
+
+ 
+//reset the breakevenLevel when no trade are on market
+IF NOT ONMARKET THEN
+breakevenLevel=0
+ENDIF
+ 
+// —- BUY SIDE —-
+//test if the price have moved favourably of "startBreakeven" points already
+IF LONGONMARKET AND close-tradeprice(1)>=startBreakeven*pipsize THEN
+//calculate the breakevenLevel
+breakevenLevel = tradeprice(1)+PointsToKeep*pipsize
+ENDIF
+ 
+//place the new stop orders on market at breakevenLevel
+IF breakevenLevel>0 THEN
+SELL AT breakevenLevel STOP
+ENDIF
+// —- end of BUY SIDE —-

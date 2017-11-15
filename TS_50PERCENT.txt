@@ -1,0 +1,25 @@
+
+//resetting variables when no trades are on market
+if not onmarket then
+ MAXPRICE = 0
+ MINPRICE = close
+ priceexit = 0
+endif
+ 
+//case SHORT order
+if shortonmarket then
+ MINPRICE = MIN(MINPRICE,close) //saving the MFE of the current trade
+ priceexit = TRADEPRICE-(TRADEPRICE-MINPRICE)/2
+endif
+ 
+//case LONG order
+if longonmarket then
+ MAXPRICE = MAX(MAXPRICE,close) //saving the MFE of the current trade
+ priceexit = TRADEPRICE+(MAXPRICE-TRADEPRICE)/2
+endif
+ 
+//exit on trailing stop price levels
+if onmarket and priceexit>0 then
+ EXITSHORT AT priceexit STOP
+ SELL AT priceexit STOP
+endif

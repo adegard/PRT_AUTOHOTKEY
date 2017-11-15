@@ -1,0 +1,40 @@
+
+
+//trailing stop function
+trailingstart = 10 //trailing will start @trailinstart points profit
+trailingstep = 5 //trailing step to move the "stoploss"
+ 
+//reset the stoploss value
+IF NOT ONMARKET THEN
+ newSL=0
+ENDIF
+ 
+//manage long positions
+IF LONGONMARKET THEN
+//first move (breakeven)
+ IF newSL=0 AND close-tradeprice(1)>=trailingstart*pipsize THEN
+  newSL = tradeprice(1)+trailingstep*pipsize
+ ENDIF
+//next moves
+ IF newSL>0 AND close-newSL>=trailingstep*pipsize THEN
+  newSL = newSL+trailingstep*pipsize
+ ENDIF
+ENDIF
+ 
+//manage short positions
+IF SHORTONMARKET THEN
+//first move (breakeven)
+ IF newSL=0 AND tradeprice(1)-close>=trailingstart*pipsize THEN
+  newSL = tradeprice(1)-trailingstep*pipsize
+ ENDIF
+//next moves
+ IF newSL>0 AND newSL-close>=trailingstep*pipsize THEN
+  newSL = newSL-trailingstep*pipsize
+ ENDIF
+ENDIF
+ 
+//stop order to exit the positions
+IF newSL>0 THEN
+ SELL AT newSL STOP
+ EXITSHORT AT newSL STOP
+ENDIF

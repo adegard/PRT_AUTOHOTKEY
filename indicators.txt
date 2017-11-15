@@ -1,0 +1,60 @@
+ADX[14]
+Stochastic[14,3](close)
+AverageTrueRange[14](close)
+BollingerBandWidth[20](close)
+ChaikinOsc[3,10](close)
+ChandeKrollStopUp[10, 20, 3]
+Chandle[20](close)
+DEMA[21](close)
+DI[14](close)
+EaseOfMovement[14]
+EndPointAverage[20](close)
+ExponentialAverage[20](close)
+Cycle(close)
+ForceIndex(close)
+HistoricVolatility[20](close)
+LinearRegression[10](close)
+LinearRegressionSlope[10](close)
+MACDline[12,26,9](close)
+MACD[12,26,9](close)
+MassIndex[25]
+Momentum[12](close)
+MoneyFlowIndex[14]
+Average[20](close)
+NegativeVolumeIndex(close)
+OBV(close)
+SAR[0.02,0.02,0.2]
+PositiveVolumeIndex(close)
+PriceOscillator[5,25](close)
+PVT(close)
+R2[10](close)
+ROC[12](close)
+RSI[14](close)
+Repulse[5](close)
+SARatdmf[0.02,0.02,0.2]
+SmoothedStochastic[14,3](close)
+STD[20](close)
+STE[10](close)
+SMI[14,3,5](close)
+Supertrend[3,10]
+TEMA[21](close)
+TimeSeriesAverage[20](close)
+TriangularAverage[20](close)
+TRIX[15](close)
+TR(close)
+Variation(close)
+Volatility[10,10]
+VolumeOscillator[5,25]
+VolumeROC[12]
+WeightedAverage[20](close)
+Williams[14](close)
+WilliamsAccumDistr(close)
+ZigZag[10](close)
+CALL "PIN"
+CALL "%BB"(close)
+CALL "Bearish Harami (a rialzo)"
+CALL "Bullish Harami (ribasso)"
+CALL DIPIO[20]
+CALL DTDB[20, 0.2]
+CALL "Inversione Stocastico 2 sensi"
+CALL PEMA5
