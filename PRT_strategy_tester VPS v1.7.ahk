@@ -1,5 +1,4 @@
 SetWorkingDir %A_ScriptDir%
-#Include strings.ahk
 Sleep, 250
 FileDelete, ResFile.txt
 FileDelete, LogFile.txt
