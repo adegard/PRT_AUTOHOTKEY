@@ -9,10 +9,10 @@ Installation
 AutohotKey: https://autohotkey.com/
 Capture2text: http://capture2text.sourceforge.net/ (disabling pop up)
 
-Use Prorealtime v10.3 with REPORT windows in  FULL SCREEN mode
+Use Prorealtime v10.3 
 
 Download and Install files in the same directory
 
-NOTE: It could be necessary to adjust X, Y coordinate of mouse click!!
+Run PRT_strategy_tester v1.10.ahk
 
-Run PRT_strategy_tester VPS v1.7.ahk
+Go to a new chart, it will be show option windows. Press OK to start.
