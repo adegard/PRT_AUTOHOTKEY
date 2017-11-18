@@ -13,6 +13,6 @@ Use Prorealtime v10.3
 
 Download and Install files in the same directory
 
-Run PRT_strategy_tester v1.10.ahk
+Run PRT_strategy_tester vx.xx.ahk
 
-Go to a new chart, it will be show option windows. Press OK to start.
+Go to a new chart, it will be show option windows. Press OK to start (3rd tab).
