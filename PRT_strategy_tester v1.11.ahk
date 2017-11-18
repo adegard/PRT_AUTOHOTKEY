@@ -18,7 +18,6 @@ Gui, Show, x200 y400 NoActivate  ; NoActivate avoids deactivating the currently 
 ;WHERE IS THE GRAPH WINDOW?
 Appeared := false
 X=""
-;Text:="|<Graph_add>*185$32.00000ES00040000103U72G0I1kYU5UQF81y74G0HNX40wH0V2A6EMEz8WAYl78KF8Vn3MHkQFw4M76E101kgCFk0C7YS3U1t7yzryFzjxzYzzzzt00000M00005zzzzz000008"
 Text:="|<graph_puls>*185$32.zzzzzs00004000011s000E000040C0Q981E72G0K1l4U7sQF81BaAE3lA248kN1V3wW8mH4QVN4W7ABVD1l7kFUQN04072kt700sSFsC07YTvzTt7yzryHzzzzY00001U0000M"
 
 while(Appeared = false)
@@ -91,7 +90,16 @@ Gui, Submit  ; Save each control's contents to its associated variable.
 	), LogFile.txt
 		
 	
-Click, %X%, %Y%	
+Sleep, TMI*2
+;CLICK ADD BUTTON
+Text:="|<graph_puls>*185$32.zzzzzs00004000011s000E000040C0Q981E72G0K1l4U7sQF81BaAE3lA248kN1V3wW8mH4QVN4W7ABVD1l7kFUQN04072kt700sSFsC07YTvzTt7yzryHzzzzY00001U0000M"
+if (ok:=FindText(0, 0, 150000, 150000, 0, 0, Text))
+{
+  CoordMode, Mouse
+  X:=ok.1.1, Y:=ok.1.2, W:=ok.1.3, H:=ok.1.4, Comment:=ok.1.5, X+=W//2, Y+=H//2
+  Sleep,TMI
+  Click, %X%, %Y%
+}
 
 Loop, Read, %IndiChoice%
 {
@@ -329,7 +337,7 @@ while(ReportAppeared = false)
 
 
 
-
+Sleep, TMI*2
 
 ;maximize report window
 WinGet, report_id, ID, A
