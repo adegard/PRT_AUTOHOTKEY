@@ -410,7 +410,7 @@ while(imageAppeared = false)
 		{
 			imageAppeared := true
 			;Gui, cancel
-			;Click, %Tx%, %Ty%
+			Click, %Tx%, %Ty%
 		}
 }
 ;--------------------------------
