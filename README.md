@@ -11,8 +11,11 @@ Capture2text: http://capture2text.sourceforge.net/ (disabling pop up)
 
 Use Prorealtime v10.3 
 
-Download and Install files in the same directory
+Download and copy all the files in the same directory
 
-Run PRT_strategy_tester vx.xx.ahk
+Run PRT_strategy_tester .... vx.xx.ahk
+
+Set ProRealTime Them to "BLU PETROL" 
+Note: the program use colored pixel to run. If it is not selected the corrected theme, the program will not run correctly! 
 
 Go to a new chart, it will be show option windows. Press OK to start (3rd tab).
