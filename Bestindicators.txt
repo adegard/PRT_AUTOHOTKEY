@@ -1,7 +1,1 @@
-ChandeKrollStopUp[10, 20, 3]
-Average[20](close)
-SAR[0.02,0.02,0.2]
-PositiveVolumeIndex(close)
-SARatdmf[0.02,0.02,0.2]
-Supertrend[3,10] 
-WeightedAverage[20](close)
+PVT(close)

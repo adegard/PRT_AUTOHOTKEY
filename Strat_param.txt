@@ -1,4 +1,4 @@
 // Definizione dei parametri del codice
-DEFPARAM CumulateOrders = False // Posizioni cumulate disattivate
+DEFPARAM CumulateOrders = False// Posizioni cumulate disattivate
 //parameters
 SL=

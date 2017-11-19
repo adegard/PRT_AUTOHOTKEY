@@ -1,0 +1,31 @@
+//trailing stop
+trailingstop = 20
+ 
+//resetting variables when no trades are on market
+if not onmarket then
+ MAXPRICE = 0
+ MINPRICE = close
+ priceexit = 0
+endif
+ 
+//case SHORT order
+if shortonmarket then
+ MINPRICE = MIN(MINPRICE,close) //saving the MFE of the current trade
+ if tradeprice(1)-MINPRICE>=trailingstop*pointsize then //if the MFE is higher than the trailingstop then  
+  priceexit = MINPRICE+trailingstop*pointsize //set the exit price at the MFE + trailing stop price level
+ endif
+endif
+ 
+//case LONG order
+if longonmarket then
+ MAXPRICE = MAX(MAXPRICE,close) //saving the MFE of the current trade
+ if MAXPRICE-tradeprice(1)>=trailingstop*pointsize then //if the MFE is higher than the trailingstop then
+  priceexit = MAXPRICE-trailingstop*pointsize //set the exit price at the MFE - trailing stop price level
+ endif
+endif
+ 
+//exit on trailing stop price levels
+if onmarket and priceexit>0 then
+ EXITSHORT AT priceexit STOP
+ SELL AT priceexit STOP
+endif

@@ -52,9 +52,6 @@ WilliamsAccumDistr(close)
 ZigZag[10](close)
 CALL "PIN"
 CALL "%BB"(close)
-CALL "Bearish Harami (a rialzo)"
-CALL "Bullish Harami (ribasso)"
-CALL DIPIO[20]
-CALL DTDB[20, 0.2]
 CALL "Inversione Stocastico 2 sensi"
-CALL PEMA5
+CALL "PEMA5"
+CALL "Big Three"

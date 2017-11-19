@@ -1,13 +1,4 @@
 
-per=150
-bbfact=1
-BBUP=average[per](equa)-(- bbfact*std[per](equa) )
-BBDOWN=average[per](equa)-bbfact*std[per](equa)
-//MEAN=average[50](equa)
-
-TOSELL= (equa  CROSSES UNDER BBDOWN)
-TOBUY= (equa  CROSSES OVER BBUP)
-
 IF TOSELL THEN
 SELLSHORT 1 CONTRACT AT MARKET
 ENDIF

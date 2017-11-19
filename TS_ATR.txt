@@ -1,0 +1,34 @@
+//ATR TRAILING STOP
+// Période
+p = 14
+
+// Average True Range X
+ATRx = AverageTrueRange[p](close) * 3.5
+
+// Inversion de tendance
+IF close crosses over ATRts THEN
+ATRts = close - ATRx
+ELSIF close crosses under ATRts THEN
+ATRts = close + ATRx
+ENDIF
+
+// Cacul de l'ATRts lors de la même tendance
+IF close > ATRts THEN
+ATRnew = close - ATRx
+IF ATRnew > ATRts THEN
+ATRts = ATRnew
+ENDIF
+ELSIF close < ATRts THEN
+ATRnew = close + ATRx
+IF ATRnew < ATRts THEN
+ATRts = ATRnew
+ENDIF
+ENDIF
+
+IF LONGONMARKET and close < ATRts THEN
+SELL AT MARKET
+ENDIF
+
+IF SHORTONMARKET and close > ATRts THEN
+BUY AT MARKET
+ENDIF

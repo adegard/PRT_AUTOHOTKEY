@@ -1,0 +1,7 @@
+
+per=150
+
+MEAN=average[per](equa)
+
+TOSELL= (equa  CROSSES UNDER MEAN)
+TOBUY= (equa  CROSSES OVER MEAN)

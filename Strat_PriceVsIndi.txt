@@ -1,0 +1,4 @@
+
+
+TOSELL= (close  CROSSES UNDER equa)
+TOBUY= (close  CROSSES OVER equa)
