@@ -389,8 +389,10 @@ Click, %X%, %Y%
 
 Sleep, TMI
 
-
-
+if report_id<>""
+WinActivate, ahk_id %report_id%
+else
+{
 ; IS THERE REPORT WINDOW?
 ;image search--------------------
  imageAppeared := false
@@ -411,6 +413,8 @@ while(imageAppeared = false)
 			imageAppeared := true
 			;Gui, cancel
 			Click, %Tx%, %Ty%
+			Sleep, TMI*2
+			Click, %Tx%, %Ty%
 		}
 }
 ;--------------------------------
@@ -423,7 +427,7 @@ Sleep, TMI*2
 WinGet, report_id, ID, A
 WingetTitle TitleReport, A ; Get title from Active window.
 WinMaximize, ahk_id %report_id%
-
+}
 Sleep, TMI*2
 clipboard =  ; Start off empty 
 
